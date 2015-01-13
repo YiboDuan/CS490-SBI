@@ -1,0 +1,28 @@
+<div class="row">
+	<h2 ng-show="{{smth.id == null}}">Create an Event</h2>
+	<h2 ng-show="{{smth.id != null}}">Edit your Event</h2>
+	<form name="createSmthForm" ng-submit="smth.id != null ? editSmth() : addSmth()">
+	  <div class="form-group">
+	    <label>Event Name</label>
+	    <input ng-model="smth.name" class="form-control" value="{{smth.name}}"></input>
+	  </div>
+
+	  <div class="form-group">
+	    <label>Activity</label>
+	    <input ng-model="smth.activity" class="form-control"></input>
+	  </div>
+
+	  <div class="form-group">
+	    <label>Location</label>
+	    <input ng-model="smth.loc" class="form-control"></input>
+	  </div>
+
+	  <div class="form-group">
+	    <label>Description</label>
+	    <textarea ng-model="smth.desc" class="form-control" row="4"></textarea>
+	  </div>
+
+	  <button type="submit" class="btn btn-default" ng-show="{{smth.id == null}}">Create Event</button>
+	  <button type="submit" class="btn btn-default" ng-show="{{smth.id != null}}">Edit Event</button>
+	</form>
+</div>
