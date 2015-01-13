@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var debug = require('debug')('dosmth');
+var debug = require('debug')('cofferun');
 var app = require('../server');
 
 app.set('port', process.env.PORT || 3000);
