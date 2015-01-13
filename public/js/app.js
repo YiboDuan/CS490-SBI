@@ -1,4 +1,4 @@
-var app = angular.module('dosmth', ['ngRoute', 'ngMap'])
+var app = angular.module('coffeerun')
 	.config(function ($routeProvider) {
 		'use strict';
 		$routeProvider.when('/', {

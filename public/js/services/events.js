@@ -1,4 +1,4 @@
-angular.module('dosmth')
+angular.module('coffeerun')
   .factory('eventstorage', ['$http', function($http) {
     return {
       get: function () {

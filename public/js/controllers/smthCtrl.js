@@ -1,4 +1,4 @@
-angular.module('dosmth')
+angular.module('coffeerun')
 	.controller('smthCtrl', function smthCtrl($scope, $http, $routeParams, eventstorage) {
 		'use strict';
 
