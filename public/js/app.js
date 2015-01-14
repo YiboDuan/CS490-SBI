@@ -1,4 +1,4 @@
-var app = angular.module('coffeerun')
+var app = angular.module('coffeerun',['ngRoute'])
 	.config(function ($routeProvider) {
 		'use strict';
 		$routeProvider.when('/', {
