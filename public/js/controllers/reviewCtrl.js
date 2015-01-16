@@ -16,11 +16,6 @@ angular.module('coffeerun')
 
 		$scope.review = '';
 
-		//check this to exists after
-		if ($routeParams.id) {
-			$scope.review = reviews[$routeParams.id];
-		}
-
 		$scope.addReview = function() {
 			reviews.push($scope.review);
 			$scope.review = {};

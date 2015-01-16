@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/coffeerun');
-require('./models/Events');
+require('./models/Reviews');
 var routes = require('./routes/index');
 //var users = require('./routes/users');
 var app = express();

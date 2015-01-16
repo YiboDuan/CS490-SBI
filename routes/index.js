@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
-var Event = mongoose.model('Event');
+var Event = mongoose.model('Review');
 
 router.get('/reviews', function (req, res) {
   Event.find(function (err, reviews){
@@ -12,12 +12,12 @@ router.get('/reviews', function (req, res) {
 });
 
 router.post('/reviews', function (req, res, next) {
-  var evt = new Event(req.body);
+  var review = new Review(req.body);
 
-  evt.save(function (err, evt){
+  review.save(function (err, review){
     if(err){ return next(err); }
 
-    res.json(evt);
+    res.json(review);
   });
 });
 
