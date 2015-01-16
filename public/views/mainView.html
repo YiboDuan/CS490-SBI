@@ -1,19 +1,17 @@
 <div class="row">
-	<h3>Activities Happening Near Here</h3>
+	<h3>Recently Reviewed Internships</h3>
 	<table class="table">
 		<tr>
-			<th>Name</th>
-			<th>Activity</th>
+			<th>Company</th>
 			<th>Location</th>
-			<th>Description</th>
-			<th>Modify</th>
+			<th>Rating</th>
+			<th>Notes</th>
 		</tr>
-		<tr ng-repeat="smth in smths">
-			<td>{{smth.name}}</td>
-			<td>{{smth.activity}}</td>
-			<td>{{smth.loc}}</td>
-			<td>{{smth.desc}}</td>
-			<td><a href="#/smth/modify/{{smth.id}}"> Edit</a></td>
+		<tr ng-repeat="review in reviews">
+			<td>{{smth.company}}</td>
+			<td>{{smth.location}}</td>
+			<td>{{smth.rating}}</td>
+			<td>{{smth.notes}}</td>
 		</tr>
 	</table>
 </div>
