@@ -4,7 +4,7 @@ var app = angular.module('coffeerun',['ngRoute'])
 		$routeProvider.when('/', {
 			controller: 'reviewCtrl',
 			templateUrl: 'views/mainView.html'
-		}).when('/smth/create', {
+		}).when('/review/create', {
 			controller: 'reviewCtrl',
 			templateUrl: 'views/reviewView.html'
 		}).when('/about', {
