@@ -1,5 +1,5 @@
 angular.module('coffeerun')
-  .factory('reviewstorage', ['$http', function($http) {
+  .factory('reviewsStorage', ['$http', function($http) {
     return {
       get: function () {
       	$http.get('/reviews').

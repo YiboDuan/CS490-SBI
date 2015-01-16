@@ -1,14 +1,14 @@
 angular.module('coffeerun')
-	.controller('reviewCtrl', function reviewCtrl($scope, $http, $routeParams, eventstorage) {
+	.controller('reviewCtrl', function reviewCtrl($scope, $http, $routeParams, reviewsStorage) {
 		'use strict';
 
 		//move to services
 	  	$http.get('/reviews').
 	    success(function(data, status, headers, config) {
-	      var reviews = $scope.reviews = data;
+	       var reviews = $scope.reviews = data;
 	    }).
 	    error(function(data, status, headers, config) {
-	      // log error
+	       //error log
 	    });
 
 	    //enable this after
@@ -22,7 +22,7 @@ angular.module('coffeerun')
 		}
 
 		$scope.addReview = function() {
-			smths.push($scope.review);
+			reviews.push($scope.review);
 			$scope.review = {};
 		};
 	});

@@ -2,19 +2,16 @@ var app = angular.module('coffeerun',['ngRoute'])
 	.config(function ($routeProvider) {
 		'use strict';
 		$routeProvider.when('/', {
-			controller: 'smthCtrl',
+			controller: 'reviewCtrl',
 			templateUrl: 'views/mainView.html'
 		}).when('/smth/create', {
-			controller: 'smthCtrl',
-			templateUrl: 'views/smthView.html'
-		}).when('/smth/modify/:id', {
-			controller: 'smthCtrl',
-			templateUrl: 'views/smthView.html'
+			controller: 'reviewCtrl',
+			templateUrl: 'views/reviewView.html'
 		}).when('/about', {
-			controller: 'smthCtrl',
+			controller: 'reviewCtrl',
 			templateUrl: 'views/aboutView.html'
 		}).when('/contact', {
-			controller: 'smthCtrl',
+			controller: 'reviewCtrl',
 			templateUrl: 'views/contactView.html'
 		}).otherwise({
 			redirectTo: '#/'
