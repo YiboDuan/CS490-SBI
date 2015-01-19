@@ -7,6 +7,9 @@ var app = angular.module('coffeerun',['ngRoute'])
 		}).when('/review/create', {
 			controller: 'reviewCtrl',
 			templateUrl: 'views/reviewView.html'
+		}).when('/review/modify/:id', {
+			controller: 'reviewCtrl',
+			templateUrl: 'views/reviewView.html'
 		}).when('/about', {
 			controller: 'reviewCtrl',
 			templateUrl: 'views/aboutView.html'

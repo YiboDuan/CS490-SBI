@@ -16,7 +16,17 @@ angular.module('coffeerun')
       },
 
       insert: function (review) {
-        return $http.post('/reviews', review).
+        return $http.post('/reviews/create', review).
+          success(function(data, status, headers, config) {
+            return data;
+          }).
+          error(function(data, status, headers, config) {
+            console.log(data);
+          });
+      },
+
+      update: function (review) {
+        return $http.post('/reviews/update', review).
           success(function(data, status, headers, config) {
             return data;
           }).

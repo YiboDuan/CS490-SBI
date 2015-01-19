@@ -4,11 +4,21 @@ angular.module('coffeerun')
 
 		reviewStore.get().then(function(data) {
 			$scope.reviews = data;
+			if ($routeParams.id) {
+				$scope.review = $scope.reviews[$routeParams.id];
+			}
 		});
+
+		$scope.routeParams = $routeParams.id;
+
 		$scope.review = {};
 
 		$scope.addReview = function() {
 			reviewStore.insert($scope.review);
 			$scope.review = {};
+		};
+
+		$scope.editReview = function () {
+			reviewStore.update($scope.review);
 		};
 	});

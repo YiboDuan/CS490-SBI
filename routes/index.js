@@ -11,7 +11,7 @@ router.get('/reviews', function (req, res) {
   });
 });
 
-router.post('/reviews', function (req, res, next) {
+router.post('/reviews/create', function (req, res, next) {
   var review = new Review(req.body);
 
   review.save(function (err, review){
@@ -19,6 +19,12 @@ router.post('/reviews', function (req, res, next) {
 
     res.json(review);
   });
+});
+
+router.post('/reviews/update', function (req, res, next) {
+  Review.update({_id: req.body._id}, req.body, function(err, affected) {
+  	console.log('affected rows ' + affected);
+  })
 });
 
 module.exports = router;

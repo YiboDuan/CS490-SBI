@@ -1,6 +1,7 @@
-<div class="row">
-	<h2>Add Internship Review</h2>
-	<form name="createReviewForm" ng-submit="addReview()">
+<div class="row" ng-init='loadReviews()'>
+	<h2 ng-show="{{routeParams == null}}">Add Internship Review</h2>
+	<h2 ng-show="{{routeParams != null}}">Edit Internship Review</h2>
+	<form name="createReviewForm" ng-submit="routeParams != null ? editReview() : addReview()">
 	  <div class="form-group">
 	    <label>Company</label>
 	    <input ng-model="review.company" class="form-control" value="{{review.company}}"></input>
@@ -21,6 +22,8 @@
 	    <textarea ng-model="review.notes" class="form-control" row="4"></textarea>
 	  </div>
 
-	  <button type="submit" class="btn btn-default">Add Review</button>
+  	  <button type="submit" class="btn btn-default" ng-show="{{routeParams == null}}">Add Review</button>
+	  <button type="submit" class="btn btn-default" ng-show="{{routeParams != null}}">Edit Review</button>
+
 	</form>
 </div>
