@@ -4,7 +4,7 @@ angular.module('coffeerun')
 
 		reviewStore.get().then(function(data) {
 			$scope.reviews = data;
-		})
+		});
 		$scope.review = {};
 
 		$scope.addReview = function() {

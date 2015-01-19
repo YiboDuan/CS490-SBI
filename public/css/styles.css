@@ -19,7 +19,7 @@ html,body{
 }
 
 .navbar-custom li>a:hover,.navbar-custom li>a:focus {
-	background-color:#00CC99;
+	background-color:#996633;
 }
 
 .navbar-custom a{
@@ -27,7 +27,7 @@ html,body{
 }
 
 .navbar-custom .form-control:focus {
-	border-color: #00CC99;
+	border-color: #996633;
 	outline: 0;
 	-webkit-box-shadow: inset 0 0 0;
 	box-shadow: inset 0 0 0;
