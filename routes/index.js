@@ -24,7 +24,13 @@ router.post('/reviews/create', function (req, res, next) {
 router.post('/reviews/update', function (req, res, next) {
   Review.update({_id: req.body._id}, req.body, function(err, affected) {
   	console.log('affected rows ' + affected);
-  })
+  });
+});
+
+router.post('/reviews/delete', function (req, res, next) {
+  Review.remove({_id: req.body._id}, function(err, affected) {
+  	console.log('deleted rows ' + affected);
+  });
 });
 
 module.exports = router;

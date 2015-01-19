@@ -1,6 +1,6 @@
 <div class="row" ng-init='loadReviews()'>
-	<h2 ng-show="{{routeParams == null}}">Add Internship Review</h2>
-	<h2 ng-show="{{routeParams != null}}">Edit Internship Review</h2>
+	<h3 ng-show="{{routeParams == null}}">Add Internship Review</h2>
+	<h3 ng-show="{{routeParams != null}}">Edit Internship Review</h2>
 	<form name="createReviewForm" ng-submit="routeParams != null ? editReview() : addReview()">
 	  <div class="form-group">
 	    <label>Company</label>
@@ -23,6 +23,7 @@
 	  </div>
 
   	  <button type="submit" class="btn btn-default" ng-show="{{routeParams == null}}">Add Review</button>
+  	  <button class="btn btn-default" ng-click="deleteReview()" ng-show="{{routeParams != null}}">Delete Review</button>
 	  <button type="submit" class="btn btn-default" ng-show="{{routeParams != null}}">Edit Review</button>
 
 	</form>

@@ -21,4 +21,9 @@ angular.module('coffeerun')
 		$scope.editReview = function () {
 			reviewStore.update($scope.review);
 		};
+
+		$scope.deleteReview = function() {
+			reviewStore.delete($scope.review);
+			$scope.review = {};
+		}
 	});

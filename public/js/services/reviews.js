@@ -34,5 +34,15 @@ angular.module('coffeerun')
             console.log(data);
           });
       },
+
+      delete: function (review) {
+        return $http.post('/reviews/delete', review).
+          success(function(data, status, headers, config) {
+            return data;
+          }).
+          error(function(data, status, headers, config) {
+            console.log(data);
+          });
+      },
     };
   }]);
