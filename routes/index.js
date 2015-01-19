@@ -11,7 +11,7 @@ router.get('/reviews', function (req, res) {
   });
 });
 
-router.put('/reviews', function (req, res, next) {
+router.post('/reviews', function (req, res, next) {
   var review = new Review(req.body);
 
   review.save(function (err, review){
