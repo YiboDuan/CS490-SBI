@@ -1,18 +1,18 @@
 angular.module('coffeerun')
-  .factory('reviewStore', ['$http', function($http) {
+  .factory('reviewStore', ['$http', '$q', function($http, $q) {
     return {
       get: function () {
-        var me = this;
+        var defer = $q.defer();
 
       	$http.get('/reviews').
     	    success(function(data, status, headers, config) {
-            me.data = data;
+            defer.resolve(data);
     	    }).
     	    error(function(data, status, headers, config) {
     	      console.log(data);
     	    });
 
-        return me.data;
+        return defer.promise;
       },
 
       insert: function (review) {

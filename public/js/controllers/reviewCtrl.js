@@ -2,7 +2,9 @@ angular.module('coffeerun')
 	.controller('reviewCtrl', function reviewCtrl($scope, $http, $routeParams, reviewStore) {
 		'use strict';
 
-		$scope.reviews = reviewStore.get();
+		reviewStore.get().then(function(data) {
+			$scope.reviews = data;
+		})
 		$scope.review = {};
 
 		$scope.addReview = function() {
