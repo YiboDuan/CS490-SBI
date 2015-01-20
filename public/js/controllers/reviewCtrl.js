@@ -20,6 +20,8 @@ angular.module('coffeerun')
 		$scope.addReview = function(companyDetails) {
 			$scope.review.company = companyDetails.name;
 			$scope.review.location = companyDetails.formatted_address;
+			$scope.review.website = companyDetails.website;
+			console.log($scope.review.website);
 			reviewStore.insert($scope.review);
 			$scope.review = {};
 		};
@@ -27,11 +29,12 @@ angular.module('coffeerun')
 		$scope.editReview = function (companyDetails) {
 			$scope.review.company = companyDetails.name;
 			$scope.review.location = companyDetails.formatted_address;
+			$scope.review.website = companyDetails.website;
 			reviewStore.update($scope.review);
 		};
 
 		$scope.deleteReview = function() {
 			reviewStore.delete($scope.review);
 			$scope.review = {};
-		}
+		};
 	});
