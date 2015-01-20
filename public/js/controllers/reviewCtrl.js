@@ -2,20 +2,20 @@ angular.module('coffeerun')
 	.controller('reviewCtrl', function reviewCtrl($scope, $http, $routeParams, reviewStore) {
 		'use strict';
 
-		reviewStore.get().then(function(data) {
-			$scope.reviews = data;
-			if ($routeParams.id) {
-				$scope.review = $scope.reviews[$routeParams.id];
-			}
-		});
-
-		$scope.routeParams = $routeParams.id;
+		$scope.editing = $routeParams.id != null;
 
 		$scope.review = {};
 
 		$scope.companyOptions = {
 	      types: 'establishment'
 	    };
+
+	    reviewStore.get().then(function(data) {
+			$scope.reviews = data;
+			if ($routeParams.id) {
+				$scope.review = $scope.reviews[$routeParams.id];
+			}
+		});
 
 		$scope.addReview = function(companyDetails) {
 			$scope.review.company = companyDetails.name;
@@ -27,9 +27,6 @@ angular.module('coffeerun')
 		};
 
 		$scope.editReview = function (companyDetails) {
-			$scope.review.company = companyDetails.name;
-			$scope.review.location = companyDetails.formatted_address;
-			$scope.review.website = companyDetails.website;
 			reviewStore.update($scope.review);
 		};
 

@@ -11,6 +11,14 @@ router.get('/reviews', function (req, res) {
   });
 });
 
+router.post('/reviews/company', function (req, res, next) {
+  Review.find({company: req.body.company}, function (err, reviews){
+    if(err){ return next(err); }
+
+    res.json(reviews);
+  });
+});
+
 router.post('/reviews/create', function (req, res, next) {
   var review = new Review(req.body);
 

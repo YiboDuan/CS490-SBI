@@ -15,6 +15,20 @@ angular.module('coffeerun')
         return defer.promise;
       },
 
+      getCompany: function (company) {
+        var defer = $q.defer();
+
+        return $http.post('/reviews/company', {'company': company}).
+          success(function(data, status, headers, config) {
+            defer.resolve(data);
+          }).
+          error(function(data, status, headers, config) {
+            console.log(data);
+          });
+
+        return defer.promise;
+      },
+
       insert: function (review) {
         return $http.post('/reviews/create', review).
           success(function(data, status, headers, config) {

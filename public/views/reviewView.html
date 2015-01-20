@@ -1,10 +1,10 @@
 <div class="row">
-	<h3 ng-show="{{routeParams == null}}">Add Internship Review</h2>
-	<h3 ng-show="{{routeParams != null}}">Edit Internship Review</h2>
+	<h3 ng-show="{{!editing}}">Add Internship Review</h2>
+	<h3 ng-show="{{editing}}">Edit Internship Review</h2>
 	<form name="createReviewForm">
 	  <div class="form-group">
 	    <label>Company</label>
-	    <input ng-model="review.company" class="form-control" ng-autocomplete options="companyOptions" details="companyDetails"></input>
+	    <input ng-model="review.company" ng-disabled='{{editing}}' class="form-control" ng-autocomplete options="companyOptions" details="companyDetails"></input>
 	  </div>
 	  
 	  <div class="form-group">
@@ -19,7 +19,7 @@
 
   	  <button ng-click="addReview(companyDetails)" type="button" class="btn btn-default" ng-show="{{routeParams == null}}">Add Review</button>
   	  <button ng-click="deleteReview()" type="button" class="btn btn-default" ng-show="{{routeParams != null}}">Delete Review</button>
-	  <button ng-click="editReview(companyDetails)" type="button" class="btn btn-default" ng-show="{{routeParams != null}}">Edit Review</button>
+	  <button ng-click="editReview()" type="button" class="btn btn-default" ng-show="{{routeParams != null}}">Edit Review</button>
 
 	</form>
 </div>

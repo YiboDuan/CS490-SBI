@@ -1,0 +1,13 @@
+<div class="row">
+	<h3>Reviews for {{company.name}}</h3>
+	<table class="table">
+		<tr>
+			<th>Rating</th>
+			<th>Notes</th>
+		</tr>
+		<tr ng-repeat="review in reviews">
+			<td>{{review.rating}}</td>
+			<td>{{review.notes}}</td>
+		</tr>
+	</table>
+</div>
