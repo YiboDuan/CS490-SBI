@@ -13,6 +13,10 @@ angular.module('coffeerun')
 
 		$scope.review = {};
 
+		$scope.companyOptions = {
+	      types: 'establishment'
+	    };
+
 		$scope.addReview = function() {
 			reviewStore.insert($scope.review);
 			$scope.review = {};

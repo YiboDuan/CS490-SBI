@@ -1,19 +1,14 @@
-<div class="row" ng-init='loadReviews()'>
+<div class="row">
 	<h3 ng-show="{{routeParams == null}}">Add Internship Review</h2>
 	<h3 ng-show="{{routeParams != null}}">Edit Internship Review</h2>
-	<form name="createReviewForm" ng-submit="routeParams != null ? editReview() : addReview()">
+	<form name="createReviewForm">
 	  <div class="form-group">
 	    <label>Company</label>
-	    <input ng-model="review.company" class="form-control" value="{{review.company}}"></input>
+	    <input ng-model="review.company" class="form-control" ng-autocomplete options="companyOptions" value="{{review.company}}"></input>
 	  </div>
 
 	  <div class="form-group">
-	    <label>Location</label>
-	    <input ng-model="review.location" class="form-control"></input>
-	  </div>
-
-	  <div class="form-group">
-	    <label>Rating</label>
+	  	<label>Rating</label>
 	    <input ng-model="review.rating" class="form-control"></input>
 	  </div>
 
@@ -22,9 +17,9 @@
 	    <textarea ng-model="review.notes" class="form-control" row="4"></textarea>
 	  </div>
 
-  	  <button type="submit" class="btn btn-default" ng-show="{{routeParams == null}}">Add Review</button>
-  	  <button class="btn btn-default" ng-click="deleteReview()" ng-show="{{routeParams != null}}">Delete Review</button>
-	  <button type="submit" class="btn btn-default" ng-show="{{routeParams != null}}">Edit Review</button>
+  	  <button ng-click="addReview()" class="btn btn-default" ng-show="{{routeParams == null}}">Add Review</button>
+  	  <button ng-click="deleteReview()" class="btn btn-default" ng-show="{{routeParams != null}}">Delete Review</button>
+	  <button ng-click="editReview()" class="btn btn-default" ng-show="{{routeParams != null}}">Edit Review</button>
 
 	</form>
 </div>
