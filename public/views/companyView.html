@@ -1,5 +1,9 @@
 <div class="row">
-	<h3>Reviews for {{company.name}}</h3>
+	<h3>Reviews for {{company.name}}</h3> 
+	<form name='companyQuery'>
+		<input ng-model="company.name" ></input> 
+		<button ng-click="queryCompany()" class="btn btn-default">Seach Company</button>
+	</form>
 	<table class="table">
 		<tr>
 			<th>Rating</th>
