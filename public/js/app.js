@@ -4,7 +4,7 @@ var app = angular.module('coffeerun',['ngRoute', 'ngAutocomplete'])
 		$routeProvider.when('/', {
 			controller: 'reviewCtrl',
 			templateUrl: 'views/mainView.html'
-		}).when('/company/:company', {
+		}).when('/company', {
 			controller: 'companyCtrl',
 			templateUrl: 'views/companyView.html'
 		}).when('/review/create', {

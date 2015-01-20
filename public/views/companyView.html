@@ -1,9 +1,13 @@
 <div class="row">
-	<h3>Reviews for {{company.name}}</h3> 
 	<form name='companyQuery'>
-		<input ng-model="company.name" ></input> 
-		<button ng-click="queryCompany()" class="btn btn-default">Seach Company</button>
+	    <input ng-model="search" class="form-control" ng-autocomplete options="companyOptions" details="companyDetails"></input>
+		<button ng-click="queryCompany(companyDetails)" type="button" class="btn btn-default">Seach Company</button>
 	</form>
+
+	<br>
+	<h4>Reviews for {{company.name}}</h4>
+	<p>Address: {{company.location}}</p>
+	<p>Website: {{company.website}}</p>
 	<table class="table">
 		<tr>
 			<th>Rating</th>
