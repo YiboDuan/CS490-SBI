@@ -17,12 +17,16 @@ angular.module('coffeerun')
 	      types: 'establishment'
 	    };
 
-		$scope.addReview = function() {
+		$scope.addReview = function(companyDetails) {
+			$scope.review.company = companyDetails.name;
+			$scope.review.location = companyDetails.formatted_address;
 			reviewStore.insert($scope.review);
 			$scope.review = {};
 		};
 
-		$scope.editReview = function () {
+		$scope.editReview = function (companyDetails) {
+			$scope.review.company = companyDetails.name;
+			$scope.review.location = companyDetails.formatted_address;
 			reviewStore.update($scope.review);
 		};
 

@@ -4,8 +4,10 @@
 	<form name="createReviewForm">
 	  <div class="form-group">
 	    <label>Company</label>
-	    <input ng-model="review.company" class="form-control" ng-autocomplete options="companyOptions" value="{{review.company}}"></input>
+	    <input ng-model="review.company" class="form-control" ng-autocomplete options="companyOptions" details="companyDetails"></input>
 	  </div>
+
+	  <b>details (formatted address)</b>: {{companyDetails}}
 
 	  <div class="form-group">
 	  	<label>Rating</label>
@@ -17,9 +19,9 @@
 	    <textarea ng-model="review.notes" class="form-control" row="4"></textarea>
 	  </div>
 
-  	  <button ng-click="addReview()" type="button" class="btn btn-default" ng-show="{{routeParams == null}}">Add Review</button>
+  	  <button ng-click="addReview(companyDetails)" type="button" class="btn btn-default" ng-show="{{routeParams == null}}">Add Review</button>
   	  <button ng-click="deleteReview()" type="button" class="btn btn-default" ng-show="{{routeParams != null}}">Delete Review</button>
-	  <button ng-click="editReview()" type="button" class="btn btn-default" ng-show="{{routeParams != null}}">Edit Review</button>
+	  <button ng-click="editReview(companyDetails)" type="button" class="btn btn-default" ng-show="{{routeParams != null}}">Edit Review</button>
 
 	</form>
 </div>
