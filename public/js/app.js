@@ -1,4 +1,4 @@
-var app = angular.module('coffeerun',['ngRoute', 'ngAutocomplete'])
+var app = angular.module('coffeerun',['ngRoute', 'ngAutocomplete', 'ui.bootstrap'])
 	.config(function ($routeProvider) {
 		'use strict';
 		$routeProvider.when('/', {
