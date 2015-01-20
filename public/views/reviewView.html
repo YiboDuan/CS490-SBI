@@ -17,9 +17,9 @@
 	    <textarea ng-model="review.notes" class="form-control" row="4"></textarea>
 	  </div>
 
-  	  <button ng-click="addReview()" class="btn btn-default" ng-show="{{routeParams == null}}">Add Review</button>
-  	  <button ng-click="deleteReview()" class="btn btn-default" ng-show="{{routeParams != null}}">Delete Review</button>
-	  <button ng-click="editReview()" class="btn btn-default" ng-show="{{routeParams != null}}">Edit Review</button>
+  	  <button ng-click="addReview()" type="button" class="btn btn-default" ng-show="{{routeParams == null}}">Add Review</button>
+  	  <button ng-click="deleteReview()" type="button" class="btn btn-default" ng-show="{{routeParams != null}}">Delete Review</button>
+	  <button ng-click="editReview()" type="button" class="btn btn-default" ng-show="{{routeParams != null}}">Edit Review</button>
 
 	</form>
 </div>
