@@ -10,10 +10,12 @@
 	<p>Website: {{company.website}}</p>
 	<table class="table">
 		<tr>
+			<th>Position</th>
 			<th>Rating</th>
 			<th>Notes</th>
 		</tr>
 		<tr ng-repeat="review in reviews">
+			<td>{{review.position}}</td>
 			<td>{{review.rating}}</td>
 			<td>{{review.notes}}</td>
 		</tr>
