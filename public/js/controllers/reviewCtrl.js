@@ -2,10 +2,13 @@ angular.module('coffeerun')
 	.controller('reviewCtrl', function reviewCtrl($scope, $http, $routeParams, reviewStore) {
 		'use strict';
 
+		//state variables
 		$scope.editing = $routeParams.id != null;
 
+		//initial variables
 		$scope.review = {};
 
+		//options
 		$scope.companyOptions = {
 	      types: 'establishment'
 	    };
