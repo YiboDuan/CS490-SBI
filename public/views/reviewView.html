@@ -11,12 +11,12 @@
 	    <label>Position</label>
 	    <input ng-model="review.position" class="form-control"></input>
 	  </div>
-	  
+
 	  <div class="form-group">
 	  	<label>Rating</label>
 	    <div ng-controller="ratingCtrl">
 		    <rating ng-model="review.rating" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
-		</div>
+			</div>
 	  </div>
 
 	  <div class="form-group">
