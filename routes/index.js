@@ -42,6 +42,7 @@ router.post('/reviews/delete', function (req, res, next) {
   });
 });
 
+//get rid of this
 router.get('/users', function (req, res) {
   User.find(function (err, users){
     if(err){ return next(err); }

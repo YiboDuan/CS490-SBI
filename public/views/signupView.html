@@ -1,17 +1,12 @@
 <div class="row">
   <form name="signupForm" ng-controller="signupCtrl"
-        ng-submit="signUp(credentials)" novalidate>
+        ng-submit="signup(credentials)" novalidate>
     <label for="username">Username:</label>
     <input type="text" id="username"
            ng-model="credentials.username">
     <label for="password">Password:</label>
     <input type="password" id="password"
            ng-model="credentials.password">
-    <input type="password" name="confirmPassword"
-            ng-model="credentials.confirmPassword"
-            required
-            compare-to="credentials.password" />
-    <div ng-messages="signupForm.confirmPassword.$error"
-          ng-messages-include="messages.html"></div>
+    <button type="submit">Signup</button>
   </form>
 </div>
