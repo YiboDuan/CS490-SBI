@@ -15,5 +15,5 @@ angular.module('coffeerun')
 			$scope.company.name = companyDetails.name;
 			$scope.company.location = companyDetails.formatted_address;
 			$scope.company.website = companyDetails.website;
-		}
+		};
 	});

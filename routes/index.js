@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
 var Review = mongoose.model('Review');
+var User = mongoose.model('User');
 
 router.get('/reviews', function (req, res) {
   Review.find(function (err, reviews){
@@ -40,5 +41,22 @@ router.post('/reviews/delete', function (req, res, next) {
   	console.log('deleted rows ' + affected);
   });
 });
+
+router.post('/users/create', function (req, res, next) {
+  var user = new User(req.body);
+
+  user.save(function (err, user){
+    if(err){ return next(err); }
+
+    res.json(user);
+  });
+});
+
+router.post('/users/login', function (req, res, next) {
+  Review.find({company: req.body.company}, function (err, reviews){
+    if(err){ return next(err); }
+
+    res.json(reviews);
+  });
 
 module.exports = router;
