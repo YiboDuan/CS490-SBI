@@ -1,5 +1,5 @@
 <div class="row">
-  <form name="signupForm" ng-controller="SignUpController"
+  <form name="signupForm" ng-controller="signupCtrl"
         ng-submit="signUp(credentials)" novalidate>
     <label for="username">Username:</label>
     <input type="text" id="username"
@@ -11,7 +11,7 @@
             ng-model="credentials.confirmPassword"
             required
             compare-to="credentials.password" />
-    <div ng-messages="registrationForm.confirmPassword.$error"
+    <div ng-messages="signupForm.confirmPassword.$error"
           ng-messages-include="messages.html"></div>
   </form>
 </div>

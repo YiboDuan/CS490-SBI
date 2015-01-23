@@ -42,12 +42,19 @@ router.post('/reviews/delete', function (req, res, next) {
   });
 });
 
+router.get('/users', function (req, res) {
+  User.find(function (err, users){
+    if(err){ return next(err); }
+
+    res.json(users);
+  });
+});
+
 router.post('/users/create', function (req, res, next) {
   var user = new User(req.body);
 
   user.save(function (err, user){
     if(err){ return next(err); }
-
     res.json(user);
   });
 });

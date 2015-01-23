@@ -36,6 +36,9 @@ var app = angular.module('coffeerun',['ngRoute', 'ngAutocomplete', 'ui.bootstrap
 		}).when('/login', {
 			controller: 'loginCtrl',
 			templateUrl: 'views/loginView.html'
+		}).when('/signup', {
+			controller: 'signupCtrl',
+			templateUrl: 'views/signupView.html'
 		}).otherwise({
 			redirectTo: '#/'
 		});

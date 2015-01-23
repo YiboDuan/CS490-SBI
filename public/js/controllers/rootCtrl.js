@@ -1,5 +1,5 @@
 angular.module('coffeerun')
-  .controller('ApplicationController', function ($scope,
+  .controller('applicationCtrl', function ($scope,
                                                  USER_ROLES,
                                                  AuthService) {
     $scope.currentUser = null;
