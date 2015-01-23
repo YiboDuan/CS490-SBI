@@ -38,23 +38,23 @@
 	  <div class="form-group">
 	  	<label>Rating</label>
 	    <table class="table">
-	    	<tr>
+	    	<tr ng-controller="ratingCtrl">
 	    		<td>Technical Knowledge</td>
 				<td><rating ng-model="review.rating.tech" max="10" ng-required="true"></rating></td>
 			</tr>
-			<tr>
+			<tr ng-controller="ratingCtrl">
 	    		<td>Environment</td>
 				<td><rating ng-model="review.rating.env" max="10" ng-required="true"></rating></td>
 			</tr>
-			<tr>
+			<tr ng-controller="ratingCtrl">
 	    		<td>Benefits</td>
 				<td><rating ng-model="review.rating.benefits" max="10" ng-required="true"></rating></td>
 			</tr>
-			<tr>
+			<tr ng-controller="ratingCtrl">
 	    		<td>Job Content</td>
 				<td><rating ng-model="review.rating.content" max="10" ng-required="true"></rating></td>
 			</tr>
-			<tr>
+			<tr ng-controller="ratingCtrl">
 	    		<td>Interview Process</td>
 				<td><rating ng-model="review.rating.interview" max="10" ng-required="true"></rating></td>
 			</tr>
