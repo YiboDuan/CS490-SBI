@@ -25,4 +25,4 @@ angular.module('coffeerun')
     };
 
     return authService;
-  })
+  });

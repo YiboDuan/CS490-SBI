@@ -58,5 +58,6 @@ router.post('/users/login', function (req, res, next) {
 
     res.json(reviews);
   });
+});
 
 module.exports = router;

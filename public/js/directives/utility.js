@@ -1,4 +1,5 @@
-var compareTo = function() {
+angular.module('coffeerun')
+    .directive('compareTo', function compareTo() {
     return {
         require: "ngModel",
         scope: {
@@ -15,6 +16,4 @@ var compareTo = function() {
             });
         }
     };
-};
-
-module.directive("compareTo", compareTo);
+});
