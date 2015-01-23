@@ -1,10 +1,10 @@
 angular.module('coffeerun')
-  .factory('userStore', ['$http', '$q', function($http, $q) {
+  .factory('userStore', ['$http', function($http) {
     return {
       login: function (credentials) {
         return $http.post('/users/login', credentials).
           success(function(data, status, headers, config) {
-            defer.resolve(data);
+            return data;
           }).
           error(function(data, status, headers, config) {
             console.log(data);
