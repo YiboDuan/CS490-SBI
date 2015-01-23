@@ -38,45 +38,25 @@
 	  <div class="form-group">
 	  	<label>Rating</label>
 	    <table class="table">
-	    	<tr ng-controller="ratingCtrl" >
-	    		<td>
-			    		Technical Knowledge
-				</td>
-				<td>
-					<rating ng-model="review.rating.tech" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null" ng-required="true"></rating>
-				</td>
+	    	<tr>
+	    		<td>Technical Knowledge</td>
+				<td><rating ng-model="review.rating.tech" max="10" ng-required="true"></rating></td>
 			</tr>
-			<tr ng-controller="ratingCtrl" >
-	    		<td>
-			    		Environment
-				</td>
-				<td>
-					<rating ng-model="review.rating.env" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null" ng-required="true"></rating>
-				</td>
+			<tr>
+	    		<td>Environment</td>
+				<td><rating ng-model="review.rating.env" max="10" ng-required="true"></rating></td>
 			</tr>
-			<tr ng-controller="ratingCtrl" >
-	    		<td>
-			    		Benefits
-				</td>
-				<td>
-					<rating ng-model="review.rating.benefits" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null" ng-required="true"></rating>
-				</td>
+			<tr>
+	    		<td>Benefits</td>
+				<td><rating ng-model="review.rating.benefits" max="10" ng-required="true"></rating></td>
 			</tr>
-			<tr ng-controller="ratingCtrl" >
-	    		<td>
-			    		Job Content
-				</td>
-				<td>
-					<rating ng-model="review.rating.content" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null" ng-required="true"></rating>
-				</td>
+			<tr>
+	    		<td>Job Content</td>
+				<td><rating ng-model="review.rating.content" max="10" ng-required="true"></rating></td>
 			</tr>
-			<tr ng-controller="ratingCtrl" >
-	    		<td>
-			    		Interview Process
-				</td>
-				<td>
-					<rating ng-model="review.rating.interview" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null" ng-required="true"></rating>
-				</td>
+			<tr>
+	    		<td>Interview Process</td>
+				<td><rating ng-model="review.rating.interview" max="10" ng-required="true"></rating></td>
 			</tr>
 		</table>
 	  </div>
