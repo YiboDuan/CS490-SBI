@@ -6,7 +6,7 @@ angular.module('coffeerun')
       return $http
         .post('/users/login', credentials)
         .then(function (res) {
-          Session.create(res.data.id, res.data.user.id,
+          Session.create(res.data._id, res.data.user.id,
                          res.data.user.role);
           return res.data.user;
         });
