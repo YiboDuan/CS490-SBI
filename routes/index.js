@@ -53,10 +53,10 @@ router.post('/users/create', function (req, res, next) {
 });
 
 router.post('/users/login', function (req, res, next) {
-  User.find({username: req.body.username}, function (err, reviews){
+  User.findOne({username: req.body.username, password: req.body.password}, function (err, user){
     if(err){ return next(err); }
 
-    res.json(reviews);
+    res.json(user);
   });
 });
 

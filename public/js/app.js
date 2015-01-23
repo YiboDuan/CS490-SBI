@@ -10,7 +10,7 @@ var app = angular.module('coffeerun',['ngRoute', 'ngAutocomplete', 'ui.bootstrap
 	.constant('USER_ROLES', {
 	  all: '*',
 	  admin: 'admin',
-	  editor: 'editor',
+	  member: 'member',
 	  guest: 'guest'
 	})
 	.config(function ($routeProvider) {
