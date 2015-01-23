@@ -24,7 +24,6 @@ angular.module('coffeerun')
 			$scope.review.company = companyDetails.name;
 			$scope.review.location = companyDetails.formatted_address;
 			$scope.review.website = companyDetails.website;
-			console.log($scope.review.website);
 			reviewStore.insert($scope.review);
 			$scope.review = {};
 		};

@@ -53,7 +53,7 @@ router.post('/users/create', function (req, res, next) {
 });
 
 router.post('/users/login', function (req, res, next) {
-  Review.find({company: req.body.company}, function (err, reviews){
+  User.find({username: req.body.username}, function (err, reviews){
     if(err){ return next(err); }
 
     res.json(reviews);
