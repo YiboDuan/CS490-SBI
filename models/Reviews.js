@@ -8,6 +8,7 @@ var ReviewSchema = new mongoose.Schema({
   notes: String,
   website: String,
   author: String,
+  startDate: Date,
 });
 
 mongoose.model('Review', ReviewSchema);

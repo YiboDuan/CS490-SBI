@@ -4,22 +4,41 @@
 	<form name="createReviewForm">
 	  <div class="form-group">
 	    <label>Company</label>
-	    <input ng-model="review.company" ng-disabled='{{editing}}' class="form-control" ng-autocomplete options="companyOptions" details="companyDetails"></input>
+	    <input ng-model="review.company" ng-disabled='{{editing}}' class="form-control" ng-autocomplete options="companyOptions" details="companyDetails" ng-required="true"></input>
 	  </div>
 
 	  <div class="form-group">
 	    <label>Position</label>
-	    <input ng-model="review.position" class="form-control"></input>
+	    <input ng-model="review.position" class="form-control" ng-required="true"></input>
 	  </div>
 
 	  <div class="form-group">
 	  	<label>Duration of Internship</label>
+	    <div class="row">
+	        <div class="col-md-3" ng-controller="datePickerCtrl">
+	            <p class="input-group">
+	              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="review.startDate" is-open="opened" max-date="'today'" datepicker-options="dateOptions"  ng-required="true" show-button-bar="false" show-weeks="false"/>
+	              <span class="input-group-btn">
+	                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+	              </span>
+	            </p>
+	        </div>
+	        <div class="col-md-3" ng-controller="datePickerCtrl">
+	            <p class="input-group">
+	              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="review.endDate" is-open="opened" max-date="'today'" datepicker-options="dateOptions"  ng-required="true" show-button-bar="false" show-weeks="false"/>
+	              <span class="input-group-btn">
+	                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+	              </span>
+	            </p>
+	        </div>
+    </div>
+
 	  </div>
 	  
 	  <div class="form-group">
 	  	<label>Rating</label>
 	    <div ng-controller="ratingCtrl">
-		    <rating ng-model="review.rating" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+		    <rating ng-model="review.rating" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null" ng-required="true"></rating>
 		</div>
 	  </div>
 
