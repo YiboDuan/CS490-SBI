@@ -12,7 +12,7 @@ angular.module('coffeerun')
       },
 
       insert: function (user) {
-        return $http.post('/user/create', user).
+        return $http.post('/users/create', user).
           success(function(data, status, headers, config) {
             return data;
           }).
