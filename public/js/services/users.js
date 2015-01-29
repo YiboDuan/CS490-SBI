@@ -2,7 +2,7 @@ angular.module('coffeerun')
   .factory('userStore', ['$http', function($http) {
     return {
       login: function (credentials) {
-        return $http.post('/users/login', credentials).
+        return $http.post('/authenticate', credentials).
           success(function(data, status, headers, config) {
             return data;
           }).

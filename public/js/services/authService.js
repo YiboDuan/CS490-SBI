@@ -4,16 +4,25 @@ angular.module('coffeerun')
 
     authService.login = function (credentials) {
       return $http
-        .post('/users/login', credentials)
-        .then(function (res) {
+        .post('/authenticate', credentials)
+        .success(function (data, status, headers, config) {
+          $window.sessionStorage.token = data.token;
+          $scope.message = 'Welcome';
           Session.create(res.data._id, res.data.user.id,
                          res.data.user.role);
           return res.data.user;
+        })
+        .error(function (data, status, headers, config) {
+          // Erase the token if the user fails to log in
+          delete $window.sessionStorage.token;
+
+          // Handle login errors here
+          $scope.message = 'Error: Invalid user or password';
         });
     };
 
     authService.isAuthenticated = function () {
-      return !!Session.userId;
+      return !!$window.sessionStorage.token;
     };
 
     authService.isAuthorized = function (authorizedRoles) {

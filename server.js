@@ -4,7 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var expressJwt = require('express-jwt')
+var jwt = require('jsonwebtoken');
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/coffeerun');
@@ -23,6 +24,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use('/api', expressJwt({secret: '!uWRx78thDH1Z1kBBq'}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
