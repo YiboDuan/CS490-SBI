@@ -1,5 +1,5 @@
 angular.module('coffeerun')
-  .factory('AuthService', function ($http, Session) {
+  .factory('AuthService', function ($http, $window, Session) {
     var authService = {};
 
     authService.login = function (credentials) {
@@ -7,17 +7,13 @@ angular.module('coffeerun')
         .post('/authenticate', credentials)
         .success(function (data, status, headers, config) {
           $window.sessionStorage.token = data.token;
-          $scope.message = 'Welcome';
-          Session.create(res.data._id, res.data.user.id,
-                         res.data.user.role);
+          Session.create(data._id, data.user.id,
+                         data.user.role);
           return res.data.user;
         })
         .error(function (data, status, headers, config) {
           // Erase the token if the user fails to log in
           delete $window.sessionStorage.token;
-
-          // Handle login errors here
-          $scope.message = 'Error: Invalid user or password';
         });
     };
 

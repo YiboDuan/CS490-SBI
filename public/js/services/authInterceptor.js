@@ -1,11 +1,6 @@
 angular.module('coffeerun')
   .config(function ($httpProvider) {
-    $httpProvider.interceptors.push([
-      '$injector',
-      function ($injector) {
-        return $injector.get('AuthInterceptor');
-      }
-    ]);
+    $httpProvider.interceptors.push('AuthInterceptor');
   })
   .factory('AuthInterceptor', function ($rootScope, $q, $window, AUTH_EVENTS) {
     return {
@@ -16,7 +11,7 @@ angular.module('coffeerun')
         }
         return config;
       },
-      response: function (response) {
+      responseError: function (response) {
         $rootScope.$broadcast({
           401: AUTH_EVENTS.notAuthenticated,
           403: AUTH_EVENTS.notAuthorized,

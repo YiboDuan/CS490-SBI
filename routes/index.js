@@ -4,6 +4,8 @@ var router = express.Router();
 var Review = mongoose.model('Review');
 var User = mongoose.model('User');
 var SECRET = '!uWRx78thDH1Z1kBBq';
+var jwt = require('jsonwebtoken');
+var expressJwt = require('express-jwt');
 
 router.get('/reviews', function (req, res) {
   Review.find(function (err, reviews){
@@ -61,7 +63,7 @@ router.post('/users/create', function (req, res, next) {
   });
 });
 
-router.post('/authenticate', function (req, res) {
+router.post('/authenticate', function (req, res, next) {
   User.findOne({username: req.body.username, password: req.body.password}, function (err, user){
     if(err){ return next(err); }
 
@@ -75,11 +77,8 @@ router.post('/authenticate', function (req, res) {
       res.send(401, 'Wrong user or password');
       return;
     }
+    var token = jwt.sign(profile, SECRET, { expiresInMinutes: 60*5 });
+    res.json({ token: token });
   });
-
-  // We are sending the profile inside the token
-  var token = jwt.sign(profile, SECRET, { expiresInMinutes: 60*5 });
-
-  res.json({ token: token });
 });
 module.exports = router;
