@@ -9,4 +9,6 @@
            ng-model="credentials.password">
     <button type="submit">Login</button>
   </form>
+  <p>Logged in as: {{currentUser.username}}</p>
+  <button ng-click="logout()" type="button" class="btn btn-default">Logout</button>
 </div>

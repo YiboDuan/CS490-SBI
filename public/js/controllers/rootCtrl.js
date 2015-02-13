@@ -1,7 +1,9 @@
 angular.module('coffeerun')
   .controller('applicationCtrl', function ($scope,
-                                                 USER_ROLES,
-                                                 AuthService) {
+                                           $window,
+                                           USER_ROLES,
+                                           AuthService,
+                                           Session) {
     $scope.currentUser = null;
     $scope.userRoles = USER_ROLES;
     $scope.isAuthorized = AuthService.isAuthorized;
@@ -9,4 +11,10 @@ angular.module('coffeerun')
     $scope.setCurrentUser = function (user) {
       $scope.currentUser = user;
     };
-  })
+
+    $scope.logout = function () {
+      delete $window.sessionStorage.token;
+      $scope.currentUser = null;
+      Session.destroy();
+    };
+  });

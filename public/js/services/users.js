@@ -1,5 +1,5 @@
 angular.module('coffeerun')
-  .factory('userStore', ['$http', function($http) {
+  .factory('userStore', ['$http', '$window', 'Session', function($http) {
     return {
       login: function (credentials) {
         return $http.post('/authenticate', credentials).
@@ -9,6 +9,12 @@ angular.module('coffeerun')
           error(function(data, status, headers, config) {
             console.log(data);
           });
+      },
+
+      logout: function () {
+        delete $window.sessionStorage.token;
+        $scope.currentUser = null;
+        Session.destroy();
       },
 
       insert: function (user) {

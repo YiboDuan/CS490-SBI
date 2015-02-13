@@ -9,7 +9,7 @@ angular.module('coffeerun')
           $window.sessionStorage.token = data.token;
           Session.create(data._id, data.user.id,
                          data.user.role);
-          return res.data.user;
+          return data.user;
         })
         .error(function (data, status, headers, config) {
           // Erase the token if the user fails to log in

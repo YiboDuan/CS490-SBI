@@ -78,7 +78,8 @@ router.post('/authenticate', function (req, res, next) {
       return;
     }
     var token = jwt.sign(profile, SECRET, { expiresInMinutes: 60*5 });
-    res.json({ token: token });
+    res.json({ token: token, user: user });
   });
 });
+
 module.exports = router;
