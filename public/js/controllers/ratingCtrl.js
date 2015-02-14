@@ -1,5 +1,5 @@
 angular.module('coffeerun')
-  .controller('ratingCtrl', function ($scope) {
+  .controller('RatingCtrl', function ($scope) {
     $scope.rate = 0;
     $scope.max = 10;
 

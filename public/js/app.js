@@ -16,28 +16,28 @@ var app = angular.module('coffeerun',['ngRoute', 'ngAutocomplete', 'ui.bootstrap
 	.config(function ($routeProvider) {
 		'use strict';
 		$routeProvider.when('/', {
-			controller: 'reviewCtrl',
+			controller: 'ReviewCtrl',
 			templateUrl: 'views/mainView.html'
 		}).when('/company', {
-			controller: 'companyCtrl',
+			controller: 'CompanyCtrl',
 			templateUrl: 'views/companyView.html'
 		}).when('/review/create', {
-			controller: 'reviewCtrl',
+			controller: 'ReviewCtrl',
 			templateUrl: 'views/reviewView.html'
 		}).when('/review/modify/:id', {
-			controller: 'reviewCtrl',
+			controller: 'ReviewCtrl',
 			templateUrl: 'views/reviewView.html'
 		}).when('/about', {
-			controller: 'reviewCtrl',
+			controller: 'ReviewCtrl',
 			templateUrl: 'views/aboutView.html'
 		}).when('/contact', {
-			controller: 'reviewCtrl',
+			controller: 'ReviewCtrl',
 			templateUrl: 'views/contactView.html'
 		}).when('/login', {
-			controller: 'loginCtrl',
+			controller: 'LoginCtrl',
 			templateUrl: 'views/loginView.html'
 		}).when('/signup', {
-			controller: 'signupCtrl',
+			controller: 'SignupCtrl',
 			templateUrl: 'views/signupView.html'
 		}).otherwise({
 			redirectTo: '#/'

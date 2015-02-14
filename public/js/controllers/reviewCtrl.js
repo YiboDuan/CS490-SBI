@@ -1,5 +1,5 @@
 angular.module('coffeerun')
-	.controller('reviewCtrl', function reviewCtrl($scope, $http, $routeParams, reviewStore) {
+	.controller('ReviewCtrl', function ReviewCtrl($scope, $http, $routeParams, reviewStore) {
 		'use strict';
 
 		//state variables

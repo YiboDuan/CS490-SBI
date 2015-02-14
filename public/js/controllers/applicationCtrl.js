@@ -1,5 +1,5 @@
 angular.module('coffeerun')
-  .controller('applicationCtrl', function ($scope,
+  .controller('ApplicationCtrl', function ($scope,
                                            $window,
                                            USER_ROLES,
                                            AuthService,

@@ -15,7 +15,7 @@
 	  <div class="form-group">
 	  	<label>Duration of Internship</label>
 	    <div class="row">
-	        <div class="col-md-3" ng-controller="datePickerCtrl">
+	        <div class="col-md-3" ng-controller="DatepickerCtrl">
 	            <p class="input-group">
 	              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="review.startDate" is-open="opened" max-date="'today'" datepicker-options="dateOptions"  ng-required="true" show-button-bar="false" show-weeks="false"/>
 	              <span class="input-group-btn">
@@ -23,7 +23,7 @@
 	              </span>
 	            </p>
 	        </div>
-	        <div class="col-md-3" ng-controller="datePickerCtrl">
+	        <div class="col-md-3" ng-controller="DatepickerCtrl">
 	            <p class="input-group">
 	              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="review.endDate" is-open="opened" max-date="'today'" datepicker-options="dateOptions"  ng-required="true" show-button-bar="false" show-weeks="false"/>
 	              <span class="input-group-btn">
@@ -42,23 +42,23 @@
 	  <div class="form-group">
 	  	<label>Rating</label>
 	    <table class="table">
-	    	<tr ng-controller="ratingCtrl">
+	    	<tr ng-controller="RatingCtrl">
 	    		<td>Technical Knowledge</td>
 				<td><rating ng-model="review.rating.tech" max="10" ng-required="true"></rating></td>
 			</tr>
-			<tr ng-controller="ratingCtrl">
+			<tr ng-controller="RatingCtrl">
 	    		<td>Environment</td>
 				<td><rating ng-model="review.rating.env" max="10" ng-required="true"></rating></td>
 			</tr>
-			<tr ng-controller="ratingCtrl">
+			<tr ng-controller="RatingCtrl">
 	    		<td>Benefits</td>
 				<td><rating ng-model="review.rating.benefits" max="10" ng-required="true"></rating></td>
 			</tr>
-			<tr ng-controller="ratingCtrl">
+			<tr ng-controller="RatingCtrl">
 	    		<td>Job Content</td>
 				<td><rating ng-model="review.rating.content" max="10" ng-required="true"></rating></td>
 			</tr>
-			<tr ng-controller="ratingCtrl">
+			<tr ng-controller="RatingCtrl">
 	    		<td>Interview Process</td>
 				<td><rating ng-model="review.rating.interview" max="10" ng-required="true"></rating></td>
 			</tr>

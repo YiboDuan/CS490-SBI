@@ -1,5 +1,5 @@
 angular.module('coffeerun')
-	.controller('companyCtrl', function companyCtrl($scope, $http, $routeParams, reviewStore) {
+	.controller('CompanyCtrl', function CompanyCtrl($scope, $http, $routeParams, reviewStore) {
 		'use strict';
 
 		$scope.companyOptions = {

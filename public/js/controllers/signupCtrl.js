@@ -1,5 +1,5 @@
 angular.module('coffeerun')
-  .controller('signupCtrl', function ($scope, $http, $routeParams, userStore) {
+  .controller('SignupCtrl', function ($scope, $http, $routeParams, userStore) {
 
   $scope.credentials = {};
 

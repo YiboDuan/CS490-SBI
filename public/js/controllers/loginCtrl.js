@@ -1,5 +1,5 @@
 angular.module('coffeerun')
-  .controller('loginCtrl', function ($scope, $rootScope, AUTH_EVENTS, AuthService) {
+  .controller('LoginCtrl', function ($scope, $rootScope, AUTH_EVENTS, AuthService) {
     $scope.credentials = {
       username: '',
       password: ''
