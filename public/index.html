@@ -27,9 +27,12 @@
       <ul class="nav navbar-nav">
         <li><a href="#review/create">Add Review</a></li>
         <li><a href="#company">Company Profile</a></li>
+        <li><a ng-show="currentUser.username"href="#profile">Profile</a></li>
         <li>&nbsp;</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li><a ng-hide="currentUser.username"href="#login">Login</a></li>
+        <li><a ng-show="currentUser.username"href="#logout">Logout</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -63,7 +66,7 @@
   <script src="js/controllers/datepickerCtrl.js"></script>
   <script src="js/controllers/loginCtrl.js"></script>
   <script src="js/controllers/signupCtrl.js"></script>
-  <script src="js/controllers/rootCtrl.js"></script>
+  <script src="js/controllers/applicationCtrl.js"></script>
   <script src="js/services/reviews.js"></script>
   <script src="js/services/authService.js"></script>
   <script src="js/services/authInterceptor.js"></script>
