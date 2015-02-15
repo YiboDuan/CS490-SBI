@@ -3,7 +3,10 @@ var express = require('express');
 var router = express.Router();
 var Review = mongoose.model('Review');
 var User = mongoose.model('User');
+var Profile = mongoose.model('Profile');
+
 var SECRET = '!uWRx78thDH1Z1kBBq';
+
 var jwt = require('jsonwebtoken');
 var expressJwt = require('express-jwt');
 
@@ -45,21 +48,29 @@ router.post('/reviews/delete', function (req, res, next) {
   });
 });
 
-//get rid of this
-router.get('/users', function (req, res) {
-  User.find(function (err, users){
-    if(err){ return next(err); }
-
-    res.json(users);
-  });
-});
-
 router.post('/users/create', function (req, res, next) {
   var user = new User(req.body);
 
   user.save(function (err, user){
     if(err){ return next(err); }
     res.json(user);
+  });
+});
+
+router.get('/profile', function (req, res, next) {
+  Profile.find({id: req.body.id}, function (err, profile){
+    if(err){ return next(err); }
+
+    res.json(profile);
+  });
+});
+
+router.post('/profile/add', function (req, res, next) {
+  var profile = new Profile(req.body);
+
+  profile.save(function (err, profile){
+    if(err){ return next(err); }
+    res.json(profile);
   });
 });
 

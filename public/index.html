@@ -27,13 +27,13 @@
       <ul class="nav navbar-nav">
         <li><a href="#review/create">Add Review</a></li>
         <li><a href="#company">Company Profile</a></li>
-        <li><a ng-show="currentUser.username"href="#profile">Profile</a></li>
+        <li><a ng-show="currentUser"href="#profile">Profile</a></li>
         <li>&nbsp;</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a ng-hide="currentUser.username" href="#login">Login</a></li>
-        <li><a ng-hide="currentUser.username" href="#signup">Sign Up</a></li>
-        <li><a ng-show="currentUser.username" ng-click="logout()">Logout</a></li>
+        <li><a ng-hide="currentUser" href="#login">Login</a></li>
+        <li><a ng-hide="currentUser" href="#signup">Sign Up</a></li>
+        <li><a ng-show="currentUser" ng-click="logout()">Logout</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>

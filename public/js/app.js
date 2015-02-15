@@ -42,6 +42,9 @@ var app = angular.module('coffeerun',['ngRoute', 'ngAutocomplete', 'ui.bootstrap
 		}).when('/profile/:id', {
 			controller: 'ProfileCtrl',
 			templateUrl: 'views/profileView.html'
+		}).when('/profile/', {
+			controller: 'ProfileCtrl',
+			templateUrl: 'views/profileView.html'
 		}).otherwise({
 			redirectTo: '#/'
 		});
