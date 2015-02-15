@@ -39,7 +39,7 @@ var app = angular.module('coffeerun',['ngRoute', 'ngAutocomplete', 'ui.bootstrap
 		}).when('/signup', {
 			controller: 'SignupCtrl',
 			templateUrl: 'views/signupView.html'
-		}).when('/profile', {
+		}).when('/profile/:id', {
 			controller: 'ProfileCtrl',
 			templateUrl: 'views/profileView.html'
 		}).otherwise({
